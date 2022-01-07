@@ -1,0 +1,8 @@
+{
+    "mongoURI": "mongodb+srv://estuardovilleda:Villeda1311@bdg.iunxl.mongodb.net/MERN-DevConector?retryWrites=true&w=majority",
+    "jwtSecret": "BDGSecretToken",
+    "githubClientId": "88e575f2190ba67d3704",
+    "githubSecret": "b12fc99504d0e1f6298b1f38e83a8d9e52caaead"
+
+
+}
