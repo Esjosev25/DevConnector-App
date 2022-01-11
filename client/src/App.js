@@ -13,6 +13,14 @@ import CreateProfile from './components/profile-forms/CreateProfile';
 import AddExperience from './components/profile-forms/AddExperience';
 import AddEducation from './components/profile-forms/AddEducation';
 
+import Profiles from './components/profiles/Profiles';
+import Profile from './components/profile/Profile';
+import Post from './components/post/Post';
+
+import NotFound from './components/layout/NotFound';
+
+import Posts from './components/posts/Posts';
+
 //Redux
 import { Provider } from 'react-redux';
 import store from './store'
@@ -47,7 +55,8 @@ const App = () => {
             <Routes>
               <Route exact path='/register' element={<Register />} />
               <Route exact path='/login' element={<Login />} />
-
+              <Route exact path='/profiles' element={<Profiles />} />
+              <Route exact path='/profile/:id' element={<Profile />} />
 
               <Route path='/dashboard' element={<PrivateRoute component={Dashboard} />} />
 
@@ -57,6 +66,11 @@ const App = () => {
               <Route exact path='/add-experience' element={<PrivateRoute component={AddExperience} />} />
               <Route exact path='/add-education' element={<PrivateRoute component={AddEducation} />} />
 
+
+              <Route exact path='/posts' element={<PrivateRoute component={Posts} />} />
+
+              <Route exact path='/posts/:id' element={<PrivateRoute component={Post} />} />
+              <Route path="/*" element={<NotFound />} />
 
             </Routes>
 

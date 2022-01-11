@@ -62,6 +62,7 @@ router.get('/', auth, async (req, res) => {
 //@acces    private
 router.get('/:id', auth, async (req, res) => {
     try {
+        console.log('lol');
         const posts = await Post.findById(req.params.id);
         if (!posts) {
             return res.status(404).json({ msg: 'Post not found' })
@@ -182,7 +183,7 @@ router.post('/comment/:id', [auth,
 
         await post.save();
 
-        res.json(post);
+        res.json(post.comments);
     } catch (err) {
         console.error(err.message);
         res.status(500).send('Server Error')
@@ -223,8 +224,6 @@ router.delete('/comment/:id/:comment_id', auth, async (req, res) => {
 })
 
 
-//@route PUT api/posts/comment/:id/:comment_id
-//@desc  Modify a comment 
-//@acces private
+
 
 module.exports = router
